@@ -63,9 +63,8 @@ public class Engine {
         population = new Population(chromosomes);
     }
 
-    // TODO: Should return chromosome type based on config (use a dp that adheres to OCP rather than a switch)
     private Chromosome createChromosome() {
-        return null;
+        return config.chromosomeType().get();
     }
 
     private void evaluatePopulation() {
