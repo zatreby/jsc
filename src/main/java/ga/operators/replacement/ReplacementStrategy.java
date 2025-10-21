@@ -5,6 +5,7 @@ import ga.core.Population;
 
 import java.util.List;
 
+@FunctionalInterface
 public interface ReplacementStrategy {
     Population replace(Population currentPopulation, List<Chromosome> offspring, int populationSize);
 }

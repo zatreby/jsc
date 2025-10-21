@@ -1,12 +1,16 @@
 package ga.chromosome;
 
+import java.util.List;
+
 public abstract class Chromosome implements Cloneable {
     protected double fitness;
 
     public abstract void initialize(int length, double lowerBound, double upperBound);
     public abstract int getLength();
     public abstract Object getGene(int index);
+    public abstract List<Object> getGenes();
     public abstract void setGene(int index, Object value);
+    public abstract void setGenes(List<Object> genes);
     public abstract Chromosome clone();
 
     public double getFitness() {

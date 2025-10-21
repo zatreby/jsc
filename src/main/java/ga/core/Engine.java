@@ -95,7 +95,7 @@ public class Engine {
 
             if (random.nextDouble() < config.crossoverRate()) {
                 List<Chromosome> children = config.crossoverOperator()
-                        .crossover(parent1, parent2);
+                        .crossover(parent1, parent2, config.chromosomeType());
                 offspring.addAll(children);
             } else {
                 offspring.add(parent1.clone());

@@ -3,7 +3,7 @@ package ga.chromosome;
 import java.util.function.Supplier;
 
 public enum ChromosomeType {
-    BINARY(null),
+    BINARY(BinaryChromosome::new),
     INTEGER(null),
     FLOATING_POINT(null);
 

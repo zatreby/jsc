@@ -2,10 +2,14 @@ package ga.core;
 
 import ga.chromosome.*;
 import ga.operators.crossover.*;
+import ga.operators.crossover.impl.SinglePointCrossover;
 import ga.operators.mutation.*;
+import ga.operators.mutation.impl.BitFlipMutation;
+import ga.operators.replacement.impl.GenerationalReplacement;
 import ga.operators.selection.*;
 import ga.operators.replacement.*;
 
+import ga.operators.selection.impl.RouletteWheelSelection;
 import ga.problem.*;
 
 public class Configuration {
@@ -23,11 +27,10 @@ public class Configuration {
     private FitnessFunction fitnessFunction;
     private ConstraintHandler constraintHandler;
 
-    // TODO : replace with implemented defaults
-    private SelectionOperator selectionOperator = null;
-    private CrossoverOperator crossoverOperator = null;
-    private MutationOperator mutationOperator = null;
-    private ReplacementStrategy replacementStrategy = null;
+    private SelectionOperator selectionOperator = new RouletteWheelSelection();
+    private CrossoverOperator crossoverOperator = new SinglePointCrossover();
+    private MutationOperator mutationOperator = new BitFlipMutation();
+    private ReplacementStrategy replacementStrategy = new GenerationalReplacement();
 
     public int populationSize() {
         return populationSize;
